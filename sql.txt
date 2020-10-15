@@ -3,8 +3,14 @@ SELECT with JOIN practice:
 Join the OrderDetails and Products tables, to show a report where the columns are OrderID, ProductName, and Quantity.
 Paste the SQL statement you used below.
 
+SELECT Products.ProductID, Products.ProductName, OrderDetails.OrderID, OrderDetails.Quantity
+FROM OrderDetails
+INNER JOIN Products ON Products.ProductID=OrderDetails.ProductID;
 
 Join the Orders, OrderDetails, and Employees tables to return a report with with the EmployeeName, ProductID, and Quantity.
 Paste the SQL statement you used below.
 
-
+SELECT OrderDetails.ProductID, Employees.FirstName, Employees.LastName, OrderDetails.Quantity
+FROM OrderDetails
+INNER JOIN Orders ON Orders.OrderID=OrderDetails.OrderID
+JOIN Employees ON Employees.EmployeeID=Orders.EmployeeID;
